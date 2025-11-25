@@ -1,0 +1,278 @@
+/* src/index.css - COD COMPLET REPARAT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #e0f7fa; /* Fundal general */
+  color: #333;
+}
+
+/* =========================================
+   PARTEA 1: MENIUL PRINCIPAL (REPARAT)
+   (Stilurile care erau la început)
+   ========================================= */
+
+.continent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #263238;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #546e7a;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+/* Grila pentru Continente (Europa, Asia...) */
+.continent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+/* Cardul de Continent */
+.continent-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.continent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.continent-emoji {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.continent-card h2 {
+  margin: 10px 0;
+  color: #37474f;
+}
+
+/* Butoanele de pe cardul de continent */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.learn-btn, .quiz-btn, .quick-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  color: white;
+}
+
+.learn-btn { background-color: #00acc1; } /* Cyan */
+.quiz-btn { background-color: #00897b; } /* Teal */
+.quick-btn { background-color: #fb8c00; } /* Orange */
+
+.learn-btn:hover { background-color: #0097a7; }
+.quiz-btn:hover { background-color: #00796b; }
+.quick-btn:hover { background-color: #f57c00; }
+
+/* Badge-uri (Aur, Argint) */
+.badge {
+  background-color: #fff9c4;
+  color: #fbc02d;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* =========================================
+   PARTEA 2: PAGINA DE ÎNVĂȚARE (NOUA)
+   (Cercurile interactive cu Flip)
+   ========================================= */
+
+.learning-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.learning-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.learning-title {
+  font-size: 2rem;
+  color: #00695c;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+/* Buton Înapoi Simplu */
+.back-btn-simple {
+  background: white;
+  border: 2px solid #00695c;
+  color: #00695c;
+  padding: 8px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.back-btn-simple:hover {
+  background: #00695c;
+  color: white;
+}
+
+/* Grila de Cercuri */
+.circles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* CERCUL - Stil și Animație */
+.circle-card {
+  width: 170px;
+  height: 170px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.circle-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.circle-card.flipped .circle-inner {
+  transform: rotateY(180deg);
+}
+
+.circle-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: 5px solid white;
+}
+
+/* Fața (Verde) */
+.circle-front {
+  background: linear-gradient(135deg, #26a69a 0%, #00897b 100%);
+  color: white;
+}
+
+/* Spatele (Albastru) */
+.circle-back {
+  background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.circle-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+.circle-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.rotate-icon {
+  font-size: 1.2rem;
+  margin-top: 8px;
+  opacity: 0.6;
+}
+
+/* Hover */
+.circle-card:hover .circle-face {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   PARTEA 3: REZULTATE ȘI QUIZ
+   ========================================= */
+.result {
+  text-align: center;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.answer-list {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.answer-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.answer-item.correct { background-color: #e8f5e9; }
+.answer-item.wrong { background-color: #ffebee; }
+
+.back-btn {
+  background-color: #546e7a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}

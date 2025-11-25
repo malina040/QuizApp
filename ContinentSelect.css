@@ -1,0 +1,131 @@
+/* src/components/ContinentSelect.css */
+
+/* --- Containerul Principal --- */
+.learning-container {
+  max-width: 1200px; /* Mai lat, să încapă cardurile */
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif; /* Font modern obligatoriu */
+}
+
+/* --- Zona de Sus (Header) --- */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.2); /* Ușor transparent */
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px); /* Efect de sticlă */
+}
+
+.page-title {
+  color: #0f3460; /* Albastru închis, foarte lizibil */
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+
+/* --- Butonul Înapoi (Rotund și Modern) --- */
+.back-btn {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  background-color: #f8f9fa;
+}
+
+/* --- GRILA DE FLASHCARD-URI (Aici e magia) --- */
+.cards-grid {
+  display: grid;
+  /* Se aranjează automat: minim 280px lățime. */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px; /* Spațiu între carduri */
+}
+
+/* --- Cardul Individual --- */
+.flashcard {
+  background-color: white;
+  border-radius: 16px;
+  padding: 0; /* Padding 0 ca să putem stila header-ul cardului */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Umbră fină */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ca să nu iasă colțurile */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard:hover {
+  transform: translateY(-8px); /* Se ridică sus la hover */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Linia colorată de sus a cardului */
+.card-top {
+  height: 8px;
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%); /* Gradient modern */
+  width: 100%;
+}
+
+/* Conținutul Cardului */
+.card-content {
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  justify-content: center;
+}
+
+/* Etichete mici (Țară / Capitală) */
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #a0aec0;
+  font-weight: 600;
+}
+
+/* Textul Mare (Țara) */
+.country-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+/* Separator vizual */
+.divider {
+  height: 1px;
+  background-color: #edf2f7;
+  width: 60%;
+  margin: 5px auto;
+}
+
+/* Textul Capitalei (Evidențiat) */
+.capital-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00897b; /* Teal-ul aplicației tale */
+  background: #e0f2f1;
+  padding: 8px 15px;
+  border-radius: 12px;
+  display: inline-block;
+}

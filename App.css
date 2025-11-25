@@ -1,0 +1,133 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f0fdf4; /* Un verde foarte pal pentru fundal */
+}
+
+/* --- STIL PENTRU PAGINA DE ÎNVĂȚARE (FLASHCARDS) --- */
+
+.learning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Header-ul paginii de învățare */
+.learning-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.learning-title {
+  font-size: 2.2rem;
+  color: #166534; /* Verde închis */
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+/* Grila de carduri */
+.cards-grid {
+  display: grid;
+  /* Se așează automat: minim 250px lățime */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Cardul individual */
+.flashcard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Linia colorată de sus */
+.card-top-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+  width: 100%;
+}
+
+.card-content {
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+}
+
+/* Etichete mici */
+.card-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* Text Țară */
+.card-country {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+/* Separator */
+.card-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  width: 50%;
+  margin: 8px auto;
+}
+
+/* Text Capitală */
+.card-capital {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #15803d;
+  background-color: #dcfce7;
+  padding: 6px 12px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Butonul Înapoi */
+.back-btn-modern {
+  background: white;
+  color: #15803d;
+  border: 2px solid #15803d;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-btn-modern:hover {
+  background: #15803d;
+  color: white;
+}
